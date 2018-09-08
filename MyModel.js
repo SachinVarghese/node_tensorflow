@@ -12,7 +12,7 @@ MyModel.prototype.init = async function() {
 
 MyModel.prototype.predict = function(data) {
   console.log("Predicting ...");
-  return this.model.predict(tf.tensor2d(data));
+  return this.model.predict(tf.tensor(data.values,data.shape));
 };
 
 module.exports = MyModel;
