@@ -10,9 +10,9 @@ MyModel.prototype.init = async function() {
   this.model.compile({ optimizer: "sgd", loss: "meanSquaredError" });
 };
 
-MyModel.prototype.predict = function(testImages) {
+MyModel.prototype.predict = function(data) {
   console.log("Predicting ...");
-  return this.model.predict(testImages);
+  return this.model.predict(tf.tensor2d(data));
 };
 
 module.exports = MyModel;
