@@ -15,7 +15,4 @@ MyModel.prototype.predict = function(testImages) {
   return this.model.predict(testImages);
 };
 
-let x = new MyModel();
-x.init().then(async () => {
-  x.predict(tf.randomNormal([1, 10])).print();
-});
+module.exports = MyModel;
